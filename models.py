@@ -1,7 +1,6 @@
-
 from flask_sqlalchemy import SQLAlchemy
 
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 
 class FCuser(db.Model):
         __tablename__ = 'fcuser'
