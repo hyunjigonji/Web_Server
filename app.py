@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -12,11 +13,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-class Test(db.Model):
-        __tablename__ = 'test_table'
-        id = db.Column(db.Integer, primary_key=True)
-        name = db.Column(db.String(32), unique=True)
-
 @app.route('/')
 def hello():
-        return 'Hello World!'
+        return render_template('hello.html')
