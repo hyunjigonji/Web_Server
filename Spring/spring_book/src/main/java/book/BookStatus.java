@@ -1,4 +1,5 @@
 package book;
 
-public class BookStatus {
+public enum BookStatus {
+    DRAFT, PUBLISHED;
 }
