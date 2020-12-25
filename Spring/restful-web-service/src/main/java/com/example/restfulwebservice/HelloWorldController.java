@@ -12,4 +12,10 @@ public class HelloWorldController {
     public String helloWorld(){
         return "Hello World";
     }
+
+    // generate class : alt + enter
+    @GetMapping(path = "/hello-world-bean")
+    public HelloWorldBean helloWorldBean(){
+        return new HelloWorldBean("Hello World");
+    }
 }
