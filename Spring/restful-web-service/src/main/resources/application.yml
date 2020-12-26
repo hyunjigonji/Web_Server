@@ -8,3 +8,17 @@ logging:
 spring:
   messages:
     basename: messages
+  devtools:
+    livereload:
+      enabled: true
+  security:
+    user:
+      name: username
+      password: password
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+

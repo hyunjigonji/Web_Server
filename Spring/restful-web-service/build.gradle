@@ -16,14 +16,24 @@ configurations {
 
 repositories {
     mavenCentral()
+    jcenter()
+    maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
 }
 
 dependencies {
     compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
     compile group: 'org.hibernate', name: 'hibernate-validator', version: '6.0.7.Final'
     compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.10.2'
+    //compile('org.springframework.boot:spring-boot-starter-data-rest')
+    compile group: 'org.springframework.data', name: 'spring-data-rest-hal-browser', version: '3.3.6.RELEASE'
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0-SNAPSHOT'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0-SNAPSHOT'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.3.7.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.h2database:h2'
